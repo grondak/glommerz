@@ -1,31 +1,34 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <title>glommerZ with a Z</title>
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<style type="text/css">
-    body {
-        background: #c1e5f9;
-        color: #727276;
-        font-family: 'Montserrat', sans-serif;
-    }
-    #container {
-        width: 960px;
-        margin: 0 auto;
-        font-size: 14px;
-    }
-</style>
+<link href="style/gommerz.css" rel="stylesheet" />
 </head>
 <body>
-<img src="glommerz2.jpg" alt="Glommerz Logo" style="display: block; margin: 0 auto;">
-<div id="container">
-    <h1>glommerZ helps you find free food with no moral questions</h1>
-    <p>Let's say you want some food but you don't feel like paying. You let <strong>glommerZ</strong> help you find it by specifying your zip code and the day you want to find free food.<br/> <strong>glommerZ</strong> will point you to a list of places to get free food in your locale and <em>give you tips for getting the food.</em></p>
-    <p>Let's say you pick free food given by a rodeo association. We'll tell you that you don't have to wear jeans and that you can mention you love Tennessee Walking Horses. We'll point you to a <a href="http://en.wikipedia.org/wiki/Tennessee_Walking_Horse"> Wikipedia</a> entry where you can learn enough to show people you're not that much into rodeos but you could pass.  Okay now you are in. Scarf the food and just make a beeline for the door.<p>
-    <p>Don't tell the people giving the food that you're here from <strong>glommerZ</strong> or the free food will stop for all.</p>
-    <h2>Best of luck in your new adventures</h2>
-    <em>The glommerZ staff</em>
-</div>
+    <img src="glommerz2.jpg" alt="Glommerz Logo" style="display: block; margin: 0 auto;">
+    <div id="introparagraph">
+        <h1>glommerZ helps you find free food with no moral questions</h1>
+        <p>Let's say you want some food but you don't feel like paying. You let <strong>glommerZ</strong> help you find it by specifying your zip code and the day you want to find free food.<br/> <strong>glommerZ</strong> will point you to a list of places to get free food in your locale and <em>give you tips for getting the food.</em></p>
+        <p>Let's say you pick free food given by a rodeo association. We'll tell you that you don't have to wear jeans and that you can mention you love Tennessee Walking Horses. We'll point you to a <a href="http://en.wikipedia.org/wiki/Tennessee_Walking_Horse"> Wikipedia</a> entry where you can learn enough to show people you're not that much into rodeos but you could pass.  Okay now you are in. Scarf the food and just make a beeline for the door.<p>
+        <p>Don't tell the people giving the food that you're here from <strong>glommerZ</strong> or the free food will stop for all.</p>
+        <h2>Best of luck in your new adventures</h2>
+        <em>The glommerZ staff</em>
+    </div>
+    <br />
+    <div id="container" data-ng-app>
+        <h1>Events with free food</h1>
+        <div data-ng-controller="MyCtrl">
+                <div class="event" data-ng-repeat="item in items">
+                    <span class="event-key">Event: </span><span class="event-value">{{item.placeName}} </span><span class="event-key">@ </span>  <span class="event-value">{{item.date | date: 'medium' }}</span> <span class="event-key">&mdash;</span><span class="event-value">{{item.eventName}}</span>  <span class="event-key">Hint: </span> <span class="event-value">{{item.hint}}</span>
+                    <br />
+                </div>
+        </div>
+    </div>
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="scripts/underscore-min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/glommerz/app.js"></script>
 </body>
 </html>
