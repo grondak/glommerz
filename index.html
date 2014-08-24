@@ -24,6 +24,7 @@
                     <span class="event-key">Event: </span><span class="event-value">{{item.placeName}} </span><span class="event-key">@ </span>  <span class="event-value">{{item.date | date: 'medium' }}</span> <span class="event-key">&mdash;</span><span class="event-value">{{item.eventName}}</span>  <span class="event-key">Hint: </span> <span class="event-value">{{item.hint}}</span>
                     <br />
                 </div>
+            <h3><ng-pluralize count="items.length" when="pluralizer"></ng-pluralize></h3>
         </div>
     </div>
     <script src="scripts/jquery-2.1.1.min.js"></script>

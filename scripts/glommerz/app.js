@@ -24,5 +24,11 @@
             eventName: "Electronics Hackathon",
             hint: "Tell them you just love that 555 timer."
         }
-    ]
+    ];
+
+    $scope.pluralizer = {
+        0: "No events found.",
+        1: "One event found.",
+        other: "{} events found."
+    }
 }
